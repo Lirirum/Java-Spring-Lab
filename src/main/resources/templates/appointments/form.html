@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма запису</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="wrapper">
+    <div th:replace="~{layouts/main :: navbar}"></div>
+    <div class="main">
+        <div class="content">
+            <h2>Запис на прийом</h2>
+            <form th:action="@{/appointments/add}" th:object="${appointment}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+
+                <label for="patient">Пацієнт:</label>
+                <select id="patient" name="patient.id" required>
+                    <option value="">-- Оберіть пацієнта --</option>
+                    <option th:each="p : ${patients}" th:value="${p.id}" th:text="${p.fullName}"></option>
+                </select>
+                <span th:if="${#fields.hasErrors('patient')}" th:errors="*{patient}">Обов'язкове поле</span>
+
+                <label for="doctorName">Лікар:</label>
+                <input type="text" id="doctorName" th:field="*{doctorName}" required />
+                <span th:if="${#fields.hasErrors('doctorName')}" th:errors="*{doctorName}">Обов'язкове поле</span>
+
+                <label for="appointmentDate">Дата та час:</label>
+                <input type="datetime-local" id="appointmentDate" th:field="*{appointmentDate}" required />
+                <span th:if="${#fields.hasErrors('appointmentDate')}" th:errors="*{appointmentDate}">Обов'язкове поле</span>
+
+                <button type="submit">Зберегти</button>
+            </form>
+        </div>
+    </div>
+    <div th:replace="~{layouts/main :: footer}"></div>
+</div>
+</body>
+</html>

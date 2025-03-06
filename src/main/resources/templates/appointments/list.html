@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="wrapper">
+    <div th:replace="~{layouts/main :: navbar}"></div>
+    <div class="main">
+        <div class="content">
+            <h2>Список записів на прийом</h2>
+            <a th:href="@{/appointments/add}" class="btn">Додати запис</a>
+            <table class="styled-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Пацієнт</th>
+                    <th>Лікар</th>
+                    <th>Дата</th>
+                    <th>Дії</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="appointment : ${appointments}">
+                    <td th:text="${appointment.id}"></td>
+                    <td th:text="${appointment.patient.fullName}"></td>
+                    <td th:text="${appointment.doctorName}"></td>
+                    <td th:text="${#temporals.format(appointment.appointmentDate, 'yyyy-MM-dd HH:mm')}"></td>
+                    <td>
+                        <a th:href="@{/appointments/edit/{id}(id=${appointment.id})}">Редагувати</a>
+                        <a th:href="@{/appointments/delete/{id}(id=${appointment.id})}"
+                           onclick="return confirm('Ви впевнені?')">Видалити</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div th:replace="~{layouts/main :: footer}"></div>
+</div>
+</body>
+</html>

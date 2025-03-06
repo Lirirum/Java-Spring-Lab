@@ -1,0 +1,263 @@
+
+
+* {
+    box-sizing: border-box;
+  }
+
+html,body {
+    font-family: 'Arial', sans-serif;
+
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image:  url("/images/wallpaper/winter3.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.main {
+    background-color: #f0f0f0f3;
+    width: 1200px;
+    flex: 1 1 auto;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem; /* Розмір заголовка */
+
+}
+
+
+
+
+
+
+nav.main_nav  {
+
+    text-align: center;
+    background-color: #333;
+    padding: 10px 0;
+
+}
+
+nav.main_nav  a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav.main_nav  a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+
+p {
+    font-size: 1.2rem;
+
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+
+
+
+}
+
+
+.main-list {
+    list-style: none;
+    padding: 0;
+}
+
+.main-list li {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.main-list li:hover {
+    background-color: #f1f1f1;
+}
+
+.main-list strong {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.list-container{
+    background-color:rgba(24, 20, 236, 0.404);
+    padding: 20px;
+    border-radius:10px
+
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    text-align: left;
+}
+
+/* Стиль заголовка */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Стиль для міток (label) */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Стиль для полів введення */
+input[type="text"], input[type="number"],input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Стиль для кнопки */
+input[type="submit"],button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Стиль при наведенні на кнопку */
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    height: 50px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 100px;
+    max-width:100%;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.styled-table thead {
+    background-color: #009879;
+    color: #ffffff;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Стиль при наведенні */
+select:hover {
+    border-color: #888;
+}
+
+/* Стиль при фокусі */
+select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Стиль для елементів списку */
+select option {
+    padding: 10px;
+}
+
+/* Стиль для поля вибору дати і часу */
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Стиль при наведенні */
+input[type="datetime-local"]:hover {
+    border-color: #888;
+}
+
+/* Стиль при фокусі */
+input[type="datetime-local"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Medical Record Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="wrapper">
+    <div th:replace="~{layouts/main :: navbar}"></div>
+    <div class="main">
+        <div class="content">
+            <h2 th:text="${title}"></h2>
+            <form th:action="@{/medical-records/add}" th:object="${medicalRecord}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+
+                <!-- Вибір пацієнта зі списку -->
+                <label for="patient">Пацієнт:</label>
+                <select id="patient" name="patient.id" required>
+                    <option value="">-- Оберіть пацієнта --</option>
+                    <option th:each="p : ${patients}" th:value="${p.id}" th:text="${p.fullName}"></option>
+                </select>
+                <span th:if="${#fields.hasErrors('patient')}" th:errors="*{patient}">Необхідно обрати пацієнта</span>
+
+                <label for="description">Опис запису:</label>
+                <textarea id="description" th:field="*{description}" required></textarea>
+                <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Опис обов'язковий</span>
+
+                <label for="createdAt">Дата створення:</label>
+                <input type="datetime-local" id="createdAt" th:field="*{createdAt}" required />
+                <span th:if="${#fields.hasErrors('createdAt')}" th:errors="*{createdAt}">Дата обов'язкова</span>
+
+                <button type="submit">Зберегти</button>
+            </form>
+        </div>
+    </div>
+    <div th:replace="~{layouts/main :: footer}"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Default Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="wrapper" >
+        <div th:replace="~{layouts/main :: navbar}"></div>
+        <div class="main">
+            <div class="content">
+                <div th:each="record : ${records}">
+                    <p th:text="'Record ID: ' + ${record.id} + ' Details: ' + ${record.recordDetails}"></p>
+                    <form th:action="@{/medical/{patientId}/delete/{recordId}(patientId=${patientId}, recordId=${record.id})}" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+        <div th:replace="~{layouts/main :: footer}"></div>
+    </div>
+</div>
+</body>
+</html>
