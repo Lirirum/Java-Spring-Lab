@@ -24,5 +24,7 @@ public class MedicalRecord {
     @NotBlank(message = "Опис запису обов'язковий")
     private String description;
 
+    private  String category;
+
     private LocalDateTime createdAt = LocalDateTime.now();
 }

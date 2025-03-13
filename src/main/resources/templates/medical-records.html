@@ -18,6 +18,7 @@
                     <th>ID</th>
                     <th>Patient ID</th>
                     <th>Description</th>
+                    <th>Category record</th>
                     <th>Date</th>
                     <th>Actions</th>
                 </tr>
@@ -27,6 +28,7 @@
                     <td th:text="${record.id}"></td>
                     <td th:text="${record.patient.fullName}"></td>
                     <td th:text="${record.description}"></td>
+                    <td th:text="${record.category}"></td>
                     <td th:text="${record.createdAt}"></td>
                     <td>
                         <a th:href="@{/medical-records/edit/{id}(id=${record.id})}" class="btn">Edit</a>
