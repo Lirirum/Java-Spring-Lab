@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизація</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="wrapper">
+    <div th:replace="~{layouts/main :: navbar}"></div>
+    <div class="main">
+        <div class="content">
+            <h2>Авторизація</h2>
+            <form th:action="@{/login}" method="post">
+
+                <input type="email" name="username" required>
+
+                <label>Пароль:</label>
+                <input type="password" name="password" required>
+
+                <button type="submit">Увійти</button>
+            </form>
+            <p th:if="${error}" style="color: red;" th:text="${error}"></p>
+            <p>Немає акаунта? <a href="/auth/register">Зареєструватися</a></p>
+        </div>
+    </div>
+    <div th:replace="~{layouts/main :: footer}"></div>
+</div>
+
+</body>
+</html>

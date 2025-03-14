@@ -149,7 +149,7 @@ label {
 }
 
 /* Стиль для полів введення */
-input[type="text"], input[type="number"],input[type="email"] {
+input[type="text"], input[type="number"],input[type="email"], input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;

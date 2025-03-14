@@ -10,7 +10,7 @@
         <div th:replace="~{layouts/main :: navbar}"></div>
         <div class="main">
             <div class="content">
-                <form th:action="@{/patients/register}"   th:object="${patient}" method="post">
+                <form th:action="@{/register}"   th:object="${patient}" method="post">
                     <label for="firstName">Fist Name:</label>
                     <input type="text" id="firstName" th:field="*{firstName}" required />
                     <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Name is required</span>
@@ -26,6 +26,9 @@
                     <label for="email">Email:</label>
                     <input type="email" id="email" th:field="*{email}" required />
                     <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email is required</span>
+
+                    <label>Пароль:</label>
+                    <input type="password" th:field="*{password}" required>
 
                     <button type="submit">Register</button>
                 </form>

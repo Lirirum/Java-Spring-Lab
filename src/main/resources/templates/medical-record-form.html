@@ -27,8 +27,8 @@
                 <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Опис обов'язковий</span>
 
                 <label for="category">Опис запису:</label>
-                <input type="text" id="category" th:field="*{category}" required/>
-                <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}">Категорія обов'язкова</span>
+                <input type="text" id="category" th:field="*{category}" />
+
 
                 <label for="createdAt">Дата створення:</label>
                 <input type="datetime-local" id="createdAt" th:field="*{createdAt}" required />
