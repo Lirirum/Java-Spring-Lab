@@ -30,8 +30,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http,UserDetailsService userDetailsService) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/register", "/login", "/css/**", "/js/**").permitAll()
-                        .requestMatchers( "/medical-records", "/medical-records/add","/appointments", "/list").permitAll() // 3 захищені маршрути
+                        .requestMatchers("/", "/register", "/login","/list", "/css/**", "/js/**").permitAll()
+                        .requestMatchers( "/medical-records","/appointments", "/list").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(login -> login
